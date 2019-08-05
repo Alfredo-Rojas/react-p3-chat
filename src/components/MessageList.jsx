@@ -18,9 +18,13 @@ const DUMMY_DATA = [
 class MessageList extends Component {
   render() {
     return (
-      <div className="meassge-list">
+      <div className="message-list">
         {DUMMY_DATA.map((message, index) => {
-          return <div>{message.text}</div>;
+          return (
+            <div key={index} className="message">
+              <div>{message.senderId}</div>,<div>{message.text}</div>;
+            </div>
+          );
         })}
       </div>
     );
